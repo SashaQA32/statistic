@@ -39,8 +39,9 @@ public class StatsService {
 
     public int amountMonthSalesUnderAvg(int[] sales) {
         int amountMonths = 0;
+        int avg = calculateAvg(sales);
         for (int sale : sales) {
-            if (sale < calculateAvg(sales)) {
+            if (sale < avg) {
                 amountMonths += 1;
             }
         }
@@ -49,8 +50,9 @@ public class StatsService {
 
     public int amountMonthSalesOverAvg(int[] sales) {
         int amountMonths = 0;
+        int avg = calculateAvg(sales);
         for (int sale : sales) {
-            if (sale > calculateAvg(sales)) {
+            if (sale > avg) {
                 amountMonths += 1;
             }
         }
